@@ -44,4 +44,4 @@ And the `HighlightText` component will highlight all occurrences of search terms
 | textToHighlight | String        |     ✓     | Text to highlight matches in                                                                                            |
 
 ## License
-MIT License - fork, modify and use however you want.
+[MIT License](LICENSE)
