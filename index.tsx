@@ -1,42 +1,38 @@
 import React from 'react';
-import { Text, TextProps, TextStyle } from 'react-native';
-import { findAll } from 'highlight-words-core';
+import { Text as RNText, TextProps, TextStyle } from 'react-native';
+import { findAll, FindAllArgs } from 'highlight-words-core';
 
-interface HighlightTextProps extends TextProps {
-    searchWords: string[];
-    textToHighlight: string;
-    autoEscape?: boolean;
-    style?: TextStyle;
+interface HighlightTextProps extends FindAllArgs, TextProps {
     highlightStyle?: TextStyle;
     highlightComponent?: React.ComponentType<TextProps>;
-    sanitize?: (text: string) => string;
+    textComponent?: React.ComponentType<TextProps>;
 };
 
 export default function HighlightText({
+    autoEscape,
+    caseSensitive,
+    sanitize,
     searchWords,
     textToHighlight,
-    autoEscape,
-    style,
     highlightStyle,
     highlightComponent,
-    sanitize,
+    textComponent,
     ...props
 }: HighlightTextProps) {
-    const chunks = findAll({textToHighlight, searchWords, sanitize, autoEscape});
-    const Component = highlightComponent || Text;
+    const chunks = findAll({autoEscape, caseSensitive, sanitize, searchWords, textToHighlight});
+    const Text = textComponent || RNText;
+    const Highlight = highlightComponent || RNText;
 
     return (
-        <Text style={style} {...props}>
+        <Text {...props}>
             {chunks.map((chunk, index) => {
                 const text = textToHighlight.substr(chunk.start, chunk.end - chunk.start);
 
-                return (!chunk.highlight)
-                    ? text
-                    : (
-                        <Component key={index} style={chunk.highlight && highlightStyle}>
-                            {text}
-                        </Component>
-                    );
+                return (chunk.highlight) ? (
+                    <Highlight key={`chunk-${index}`} style={highlightStyle}>
+                        {text}
+                    </Highlight>
+                ) : text;
             })}
         </Text>
     );
