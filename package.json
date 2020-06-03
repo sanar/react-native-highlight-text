@@ -1,14 +1,10 @@
 {
   "name": "react-native-highlight-text",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A React Native port of react-native-highlight-words. This component is used to highlight words within a larger body of text.",
-  "main": "src/index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sanar/react-native-highlight-text.git"
   },
   "keywords": [
     "react-native",
@@ -26,15 +22,32 @@
   ],
   "author": "Sanar Tech",
   "license": "MIT",
+  "homepage": "https://github.com/sanar/react-native-highlight-text",
   "bugs": {
     "url": "https://github.com/sanar/react-native-highlight-text/issues"
   },
-  "homepage": "https://github.com/sanar/react-native-highlight-text",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanar/react-native-highlight-text.git"
+  },
   "dependencies": {
     "highlight-words-core": "^1.2.0",
     "prop-types": "^15.7.2"
   },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@types/highlight-words-core": "^1.2.0",
+    "@types/react-native": "^0.62.12",
+    "@types/react-test-renderer": "16.9.2",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-test-renderer": "16.9.0",
+    "typescript": "3.8.3"
+  },
   "peerDependencies": {
-    "react": "^16"
+    "react": "*",
+    "react-native": "*"
   }
 }
