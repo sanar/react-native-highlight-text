@@ -1,6 +1,6 @@
-import React from "react";
-import { Text as RNText, TextProps, TextStyle } from "react-native";
-import { findAll, FindAllArgs } from "highlight-words-core";
+import React from 'react';
+import { Text as RNText, TextProps, TextStyle } from 'react-native';
+import { findAll, FindAllArgs } from 'highlight-words-core';
 
 interface HighlightTextProps extends FindAllArgs, TextProps {
   highlightStyle?: TextStyle;

@@ -5,6 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "lint": "eslint index.tsx",
+    "prettier": "prettier --write *.{js,tsx,json}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -46,7 +47,9 @@
     "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^3.1.0",
     "eslint": "^7.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
     "metro-react-native-babel-preset": "^0.59.0",
+    "prettier": "^2.0.5",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-test-renderer": "16.9.0",
