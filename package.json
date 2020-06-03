@@ -1,0 +1,40 @@
+{
+  "name": "react-native-highlight-text",
+  "version": "1.0.0",
+  "description": "A React Native port of react-native-highlight-words. This component is used to highlight words within a larger body of text.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanar/react-native-highlight-text.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "reactjs",
+    "react-component",
+    "highlighter",
+    "highlight",
+    "text",
+    "words",
+    "matches",
+    "substring",
+    "occurrences",
+    "search"
+  ],
+  "author": "Sanar Tech",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanar/react-native-highlight-text/issues"
+  },
+  "homepage": "https://github.com/sanar/react-native-highlight-text",
+  "dependencies": {
+    "highlight-words-core": "^1.2.0",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16"
+  }
+}
