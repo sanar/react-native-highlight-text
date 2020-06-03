@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint index.tsx",
     "prettier": "prettier --write *.{js,tsx,json}",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --verbose --watch"
   },
   "keywords": [
     "react-native",
@@ -43,14 +45,18 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/eslint-config": "^1.1.0",
     "@react-native-community/eslint-plugin": "^1.1.0",
+    "@testing-library/jest-native": "^3.1.0",
     "@types/highlight-words-core": "^1.2.0",
+    "@types/jest": "^25.2.3",
     "@types/react-native": "^0.62.12",
     "@types/react-test-renderer": "16.9.2",
     "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^3.1.0",
+    "babel-jest": "^26.0.1",
     "eslint": "^7.1.0",
     "eslint-plugin-prettier": "^3.1.3",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.7",
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "^2.0.5",

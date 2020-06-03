@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HighlightText /> should render properly 1`] = `
+<Text>
+  In this text we can do a 
+  <Text>
+    hello
+  </Text>
+   to the entire 
+  <Text>
+    world
+  </Text>
+</Text>
+`;
+
+exports[`<HighlightText /> should render properly with custom components 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#333",
+    }
+  }
+>
+  In this text we can do a 
+  <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    hello
+  </Text>
+   to the entire 
+  <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    world
+  </Text>
+</Text>
+`;
+
+exports[`<HighlightText /> should render properly with custom styles 1`] = `
+<Text
+  style={
+    Object {
+      "color": "darkgray",
+    }
+  }
+>
+  In this text we can do a 
+  <Text
+    style={
+      Object {
+        "color": "blue",
+      }
+    }
+  >
+    hello
+  </Text>
+   to the entire 
+  <Text
+    style={
+      Object {
+        "color": "blue",
+      }
+    }
+  >
+    world
+  </Text>
+</Text>
+`;
