@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { create } from 'react-test-renderer';
 
-import HighlightText from './';
+import HighlightText from '../';
 
 describe('<HighlightText />', () => {
   it('should render properly', () => {
