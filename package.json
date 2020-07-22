@@ -1,6 +1,6 @@
 {
   "name": "@sanar/react-native-highlight-text",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A React Native port of react-native-highlight-words. This component is used to highlight words within a larger body of text.",
   "main": "lib/commonjs/index.js",
   "react-native": "lib/module/index.js",
