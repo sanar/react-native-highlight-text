@@ -7,13 +7,13 @@ React Native component used to highlight words within a larger body of text. Thi
 With npm:
 
 ```
-npm i --save react-native-highlight-text
+npm i --save @sanar/react-native-highlight-text
 ```
 
 With yarn:
 
 ```
-yarn add react-native-highlight-text
+yarn add @sanar/react-native-highlight-text
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ yarn add react-native-highlight-text
 To use it, just provide it with an array of search terms and a body of text to highlight:
 
 ```jsx
-import HighlightText from 'react-native-highlight-text';
+import HighlightText from '@sanar/react-native-highlight-text';
 
 <HighlightText
   highlightStyle={{ backgroundColor: 'yellow' }}
