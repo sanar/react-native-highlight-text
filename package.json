@@ -12,6 +12,7 @@
   "scripts": {
     "prepare": "bob build",
     "release": "dotenv release-it",
+    "check-code": "yarn prettier && yarn lint && yarn tsc --noEmit",
     "lint": "eslint src/index.tsx",
     "prettier": "prettier --write **/*.{js,tsx,json}",
     "test": "jest --verbose",
@@ -94,7 +95,8 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "yarn prettier",
-      "yarn lint"
+      "yarn lint",
+      "yarn tsc --noEmit"
     ]
   },
   "@react-native-community/bob": {
