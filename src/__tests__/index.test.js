@@ -1,30 +1,56 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react-native';
 
 import HighlightText from '../';
 
 describe('<HighlightText />', () => {
-  it('should render properly', () => {
-    const wrapper = create(
-      <HighlightText
-        searchWords={['hello', 'world']}
-        textToHighlight={'In this text we can do a hello to the entire world'}
-      />
-    );
-    expect(wrapper.toJSON()).toMatchSnapshot();
+  it('should wrap each matched search word with an isolated element', () => {
+    const props = {
+      searchWords: ['hello', 'world'],
+      textToHighlight: 'In this text we can do a hello to the entire world',
+    };
+    const { queryByText, toJSON } = render(<HighlightText {...props} />);
+
+    for (const word of props.searchWords) {
+      expect(queryByText(word)).toBeTruthy();
+    }
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('should detect all ocurrencies of searched words in textToHighlight prop', () => {
+    const props = {
+      searchWords: ['Slim', 'Shady'],
+      textToHighlight:
+        "I'm Slim Shady, yes, I'm the real Shady. All you other Slim Shadys, are just imitating. So won't the real Slim Shady, please stand up?",
+    };
+    const { queryAllByText, toJSON } = render(<HighlightText {...props} />);
+
+    const allSlims = queryAllByText('Slim');
+    const allShadys = queryAllByText('Shady');
+
+    expect(allSlims).toHaveLength(3);
+    expect(allShadys).toHaveLength(4);
+
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('should render properly with custom styles', () => {
-    const wrapper = create(
-      <HighlightText
-        searchWords={['hello', 'world']}
-        textToHighlight={'In this text we can do a hello to the entire world'}
-        style={{ color: 'darkgray' }}
-        highlightStyle={{ color: 'blue' }}
-      />
-    );
-    expect(wrapper.toJSON()).toMatchSnapshot();
+    const props = {
+      searchWords: ['hello', 'world'],
+      textToHighlight: 'In this text we can do a hello to the entire world',
+      style: { color: 'darkgray' },
+      highlightStyle: { color: 'blue' },
+    };
+
+    const { queryByText, toJSON } = render(<HighlightText {...props} />);
+
+    for (const word of props.searchWords) {
+      expect(queryByText(word)).toHaveStyle(props.highlightStyle);
+    }
+
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('should render properly with custom components', () => {
@@ -34,7 +60,7 @@ describe('<HighlightText />', () => {
     const CustomHighlight = (props) => (
       <Text style={{ fontWeight: 'bold' }}>{props.children}</Text>
     );
-    const wrapper = create(
+    const { toJSON } = render(
       <HighlightText
         searchWords={['hello', 'world']}
         textToHighlight={'In this text we can do a hello to the entire world'}
@@ -42,6 +68,6 @@ describe('<HighlightText />', () => {
         highlightComponent={CustomHighlight}
       />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 });
