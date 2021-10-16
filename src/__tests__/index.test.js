@@ -25,7 +25,7 @@ describe('<HighlightText />', () => {
       textToHighlight:
         "I'm Slim Shady, yes, I'm the real Shady. All you other Slim Shadys, are just imitating. So won't the real Slim Shady, please stand up?",
     };
-    const { queryAllByText, toJSON } = render(<HighlightText {...props} />);
+    const { getAllByText, toJSON } = render(<HighlightText {...props} />);
 
     expect(getAllByText('Slim')).toHaveLength(3);
     expect(getAllByText('Shady')).toHaveLength(4);
