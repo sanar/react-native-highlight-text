@@ -1,15 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HighlightText /> should render properly 1`] = `
+exports[`<HighlightText /> should detect all ocurrencies of searched words in textToHighlight prop 1`] = `
 <Text>
-  In this text we can do a 
+  I'm 
   <Text>
-    hello
+    Slim
   </Text>
-   to the entire 
+   
   <Text>
-    world
+    Shady
   </Text>
+  , yes, I'm the real 
+  <Text>
+    Shady
+  </Text>
+  . All you other 
+  <Text>
+    Slim
+  </Text>
+   
+  <Text>
+    Shady
+  </Text>
+  s, are just imitating. So won't the real 
+  <Text>
+    Slim
+  </Text>
+   
+  <Text>
+    Shady
+  </Text>
+  , please stand up?
 </Text>
 `;
 
@@ -70,6 +91,19 @@ exports[`<HighlightText /> should render properly with custom styles 1`] = `
       }
     }
   >
+    world
+  </Text>
+</Text>
+`;
+
+exports[`<HighlightText /> should wrap each matched search word with an isolated element 1`] = `
+<Text>
+  In this text we can do a 
+  <Text>
+    hello
+  </Text>
+   to the entire 
+  <Text>
     world
   </Text>
 </Text>
