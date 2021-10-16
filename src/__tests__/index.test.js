@@ -27,11 +27,8 @@ describe('<HighlightText />', () => {
     };
     const { queryAllByText, toJSON } = render(<HighlightText {...props} />);
 
-    const allSlims = queryAllByText('Slim');
-    const allShadys = queryAllByText('Shady');
-
-    expect(allSlims).toHaveLength(3);
-    expect(allShadys).toHaveLength(4);
+    expect(getAllByText('Slim')).toHaveLength(3);
+    expect(getAllByText('Shady')).toHaveLength(4);
 
     expect(toJSON()).toMatchSnapshot();
   });
