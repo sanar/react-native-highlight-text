@@ -50,7 +50,6 @@
     "url": "git+https://github.com/sanar/react-native-highlight-text.git"
   },
   "dependencies": {
-    "highlight-words-core": "^1.2.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
@@ -86,7 +85,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "highlight-words-core": "^1.2.0"
   },
   "husky": {
     "hooks": {
